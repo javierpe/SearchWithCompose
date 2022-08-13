@@ -1,0 +1,90 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SearchService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.app.ml.api.network</a>
+</div>
+
+<h1>Coverage Summary for Class: SearchService (com.app.ml.api.network)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">SearchService$MockitoMock$WszTLfTG</td>
+  </tr>
+  <tr>
+    <td class="name">SearchService$MockitoMock$WszTLfTG$auxiliary$sdt8HAxT</td>
+  </tr>
+  <tr>
+    <td class="name">SearchService$MockitoMock$WszTLfTG$auxiliary$Y0hFhu1W</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.app.ml.api.network
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import com.app.ml.data.models.search.ProductSearchResponseModel
+<i class="no-highlight">4</i>&nbsp;import retrofit2.Response
+<i class="no-highlight">5</i>&nbsp;import retrofit2.http.GET
+<i class="no-highlight">6</i>&nbsp;import retrofit2.http.Query
+<i class="no-highlight">7</i>&nbsp;
+<i class="no-highlight">8</i>&nbsp;interface SearchService {
+<i class="no-highlight">9</i>&nbsp;
+<i class="no-highlight">10</i>&nbsp;    @GET(&quot;/sites/MLM/search?&quot;)
+<i class="no-highlight">11</i>&nbsp;    suspend fun search(@Query(&quot;q&quot;) query: String): Response&lt;ProductSearchResponseModel&gt;
+<i class="no-highlight">12</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-08-13 16:05</div>
+</div>
+</body>
+</html>

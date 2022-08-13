@@ -1,0 +1,148 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > NavigationController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.app.ml.api.controllers</a>
+</div>
+
+<h1>Coverage Summary for Class: NavigationController (com.app.ml.api.controllers)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">NavigationController$DefaultImpls</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33.3%
+  </span>
+  <span class="absValue">
+    (2/6)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">NavigationController$MockitoMock$oht8ao3t</td>
+  </tr>
+  <tr>
+    <td class="name">NavigationController$MockitoMock$oht8ao3t$auxiliary$dqiAjH74</td>
+  </tr>
+  <tr>
+    <td class="name">NavigationController$MockitoMock$oht8ao3t$auxiliary$hoapn7dE</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33.3%
+  </span>
+  <span class="absValue">
+    (2/6)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.app.ml.api.controllers
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import androidx.compose.runtime.Composable
+<i class="no-highlight">4</i>&nbsp;import androidx.navigation.NavGraphBuilder
+<i class="no-highlight">5</i>&nbsp;import androidx.navigation.NavHostController
+<i class="no-highlight">6</i>&nbsp;import androidx.navigation.NavOptionsBuilder
+<i class="no-highlight">7</i>&nbsp;import com.app.ml.data.models.Route
+<i class="no-highlight">8</i>&nbsp;
+<i class="no-highlight">9</i>&nbsp;interface NavigationController {
+<i class="no-highlight">10</i>&nbsp;
+<i class="no-highlight">11</i>&nbsp;    @Composable
+<i class="no-highlight">12</i>&nbsp;    fun Configure(builder: NavGraphBuilder.(NavHostController) -&gt; Unit)
+<i class="no-highlight">13</i>&nbsp;
+<b class="fc"><i class="no-highlight">14</i>&nbsp;    fun navigateTo(</b>
+<i class="no-highlight">15</i>&nbsp;        route: Route,
+<b class="nc"><i class="no-highlight">16</i>&nbsp;        args: List&lt;String&gt;? = null,</b>
+<b class="fc"><i class="no-highlight">17</i>&nbsp;        builder: (NavOptionsBuilder.() -&gt; Unit)? = null</b>
+<i class="no-highlight">18</i>&nbsp;    )
+<i class="no-highlight">19</i>&nbsp;
+<b class="nc"><i class="no-highlight">20</i>&nbsp;    fun navigateTo(</b>
+<i class="no-highlight">21</i>&nbsp;        route: String,
+<b class="nc"><i class="no-highlight">22</i>&nbsp;        args: List&lt;String&gt;? = null,</b>
+<b class="nc"><i class="no-highlight">23</i>&nbsp;        builder: (NavOptionsBuilder.() -&gt; Unit)? = null</b>
+<i class="no-highlight">24</i>&nbsp;    )
+<i class="no-highlight">25</i>&nbsp;
+<i class="no-highlight">26</i>&nbsp;    fun popBackStack()
+<i class="no-highlight">27</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-08-13 16:05</div>
+</div>
+</body>
+</html>

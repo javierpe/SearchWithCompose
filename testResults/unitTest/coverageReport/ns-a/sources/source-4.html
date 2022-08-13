@@ -1,0 +1,220 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ProductDetailUseCaseImpl</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.app.ml.impl</a>
+</div>
+
+<h1>Coverage Summary for Class: ProductDetailUseCaseImpl (com.app.ml.impl)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ProductDetailUseCaseImpl</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (8/8)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ProductDetailUseCaseImpl$loadProductDetail$1</td>
+  </tr>
+  <tr>
+    <td class="name">ProductDetailUseCaseImpl$loadProductDetail$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ProductDetailUseCaseImpl$loadProductDetail$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ProductDetailUseCaseImpl$loadProductDetail$4</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (21/21)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.app.ml.impl
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import com.app.ml.api.repositories.ProductDetailRepository
+<i class="no-highlight">4</i>&nbsp;import com.app.ml.api.useCases.ProductDetailUseCase
+<i class="no-highlight">5</i>&nbsp;import com.app.ml.data.models.ActionScreen
+<i class="no-highlight">6</i>&nbsp;import com.app.ml.data.models.productDetail.ProductDetailModel
+<i class="no-highlight">7</i>&nbsp;import com.app.ml.db.AppDatabase
+<i class="no-highlight">8</i>&nbsp;import com.app.ml.db.entities.SkeletonsEntity
+<i class="no-highlight">9</i>&nbsp;import com.app.ml.di.qualifiers.IODispatcher
+<i class="no-highlight">10</i>&nbsp;import kotlinx.coroutines.CoroutineDispatcher
+<i class="no-highlight">11</i>&nbsp;import kotlinx.coroutines.flow.Flow
+<i class="no-highlight">12</i>&nbsp;import kotlinx.coroutines.flow.catch
+<i class="no-highlight">13</i>&nbsp;import kotlinx.coroutines.flow.flowOn
+<i class="no-highlight">14</i>&nbsp;import kotlinx.coroutines.flow.onEach
+<i class="no-highlight">15</i>&nbsp;import kotlinx.coroutines.flow.onStart
+<i class="no-highlight">16</i>&nbsp;import javax.inject.Inject
+<i class="no-highlight">17</i>&nbsp;
+<i class="no-highlight">18</i>&nbsp;const val CONTEXT_PRODUCT_DETAIL = &quot;PRODUCT_DETAIL&quot;
+<i class="no-highlight">19</i>&nbsp;
+<b class="fc"><i class="no-highlight">20</i>&nbsp;class ProductDetailUseCaseImpl @Inject constructor(</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp;    @IODispatcher private val coroutineDispatcher: CoroutineDispatcher,</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;    private val productDetailRepository: ProductDetailRepository,</b>
+<b class="fc"><i class="no-highlight">23</i>&nbsp;    private val database: AppDatabase</b>
+<i class="no-highlight">24</i>&nbsp;): ProductDetailUseCase {
+<i class="no-highlight">25</i>&nbsp;
+<i class="no-highlight">26</i>&nbsp;    override suspend fun loadProductDetail(value: String): Flow&lt;ActionScreen&lt;ProductDetailModel&gt;&gt; {
+<b class="fc"><i class="no-highlight">27</i>&nbsp;        return productDetailRepository.getProductDetail(value).onEach {</b>
+<b class="fc"><i class="no-highlight">28</i>&nbsp;            if (it is ActionScreen.SuccessAction) {</b>
+<b class="fc"><i class="no-highlight">29</i>&nbsp;                database.skeletonsDao().saveSkeletonsByContext(</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;                    SkeletonsEntity(</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;                        context = CONTEXT_PRODUCT_DETAIL,</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;                        renders = listOf(CONTEXT_PRODUCT_DETAIL)</b>
+<i class="no-highlight">33</i>&nbsp;                    )
+<i class="no-highlight">34</i>&nbsp;                )
+<i class="no-highlight">35</i>&nbsp;            }
+<b class="fc"><i class="no-highlight">36</i>&nbsp;        }.onStart {</b>
+<b class="fc"><i class="no-highlight">37</i>&nbsp;            val skeletonContext = database.skeletonsDao().provideSkeletonsByContext(CONTEXT_PRODUCT_DETAIL)</b>
+<i class="no-highlight">38</i>&nbsp;
+<b class="fc"><i class="no-highlight">39</i>&nbsp;            skeletonContext?.let {</b>
+<b class="fc"><i class="no-highlight">40</i>&nbsp;                emit(ActionScreen.SkeletonAction(it.renders))</b>
+<b class="fc"><i class="no-highlight">41</i>&nbsp;            } ?: kotlin.run {</b>
+<b class="fc"><i class="no-highlight">42</i>&nbsp;                emit(ActionScreen.LoadingAction())</b>
+<b class="fc"><i class="no-highlight">43</i>&nbsp;            }</b>
+<b class="fc"><i class="no-highlight">44</i>&nbsp;        }.catch {</b>
+<b class="fc"><i class="no-highlight">45</i>&nbsp;            emit(ActionScreen.ErrorAction(it))</b>
+<b class="fc"><i class="no-highlight">46</i>&nbsp;        }.flowOn(coroutineDispatcher)</b>
+<i class="no-highlight">47</i>&nbsp;    }
+<i class="no-highlight">48</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-08-13 16:05</div>
+</div>
+</body>
+</html>
