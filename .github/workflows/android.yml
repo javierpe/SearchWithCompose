@@ -44,8 +44,12 @@ jobs:
       - name: Unit Test
         run: ./gradlew testDebugUnitTest
         
-      - name: Android Test Report
-        uses: asadmansr/android-test-report-action@v1.2.0
+      - name: Upload Test Reports Folder
+        uses: actions/upload-artifact@v2
+        if: ${{ always() }} # IMPORTANT: Upload reports regardless of status
+        with:
+          name: reports
+          path: app/build/test-results # path to where the xml test results are stored
         
   report:
     
@@ -58,3 +62,5 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: reports
+      - name: Android Test Report
+        uses: asadmansr/android-test-report-action@v1.2.0
