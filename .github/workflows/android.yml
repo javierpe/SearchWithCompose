@@ -26,7 +26,8 @@ jobs:
       run: ./gradlew build
       
   test:
-    runs-on: macos-latest # or any other machine
+    runs-on: ubuntu-latest # or any other machine
+    needs: build
     steps:
       - name: Unit Test
         run: ./gradlew testDebugUnitTest
