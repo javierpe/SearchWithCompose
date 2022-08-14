@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ML</string>
+    <string name="home_search">Buscar productos, marcas y más</string>
+    <string name="search_info_alert">Ingresa un criterio de búsqueda para darte resultados</string>
+    <string name="search_unexpected_error">Ha ocurrido un error inesperado</string>
+    <string name="product_card_condition_used">Usado</string>
+    <string name="product_card_condition_new">Nuevo</string>
+    <string name="product_card_free_shipping">Envío gratis</string>
+    <string name="product_card_pick_up_shipping">Recoger en tienda</string>
+    <plurals name="product_card_condition_new_plus_sell">
+        <item quantity="one">Nuevo | %d vendido</item>
+        <item quantity="other">Nuevo | %d vendidos</item>
+    </plurals>
+    <plurals name="product_card_condition_used_plus_sell">
+        <item quantity="one">Usado | %d vendido</item>
+        <item quantity="other">Usado | %d vendidos</item>
+    </plurals>
+</resources>
