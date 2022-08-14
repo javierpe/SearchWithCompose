@@ -46,3 +46,15 @@ jobs:
         
       - name: Android Test Report
         uses: asadmansr/android-test-report-action@v1.2.0
+        
+  report:
+    
+    runs-on: ubuntu-latest
+    
+    needs: test
+    if: ${{ always() }}
+    steps:
+      - name: Download Test Reports Folder
+        uses: actions/download-artifact@v2
+        with:
+          name: reports
