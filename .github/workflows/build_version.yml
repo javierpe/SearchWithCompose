@@ -34,9 +34,8 @@ jobs:
       uses: Devofure/advance-android-version-actions@v1.5.1
       with:
         gradlePath: app/build.gradle
-        versionName: ${{ github.event.inputs.versionName }}
+        versionName: 1.0.1
         versionCodeLimiter: 3
-        versionStage: ' '
         run: echo "${{ github.event.inputs.versionName }}"
       
     - name: Create release and upload apk
