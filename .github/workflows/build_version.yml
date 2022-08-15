@@ -30,14 +30,21 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug --stacktrace
       
+    - name: Expose version name
+      uses: michpohl/android-expose-version-name-action@v1.0.0
+      with:
+        expose-version-name: 'true'
+        expose-version-code: 'true'
+        path: /app/build.gradle
+      
     - name: Create release and upload apk
       uses: underwindfall/create-release-with-debugapk@v2.0.0
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: "${GITHUB_REF##*/}"
+        tag_name: "v$ANDROID_VERSION_NAME"
         asset_path: app/build/outputs/apk/debug/app-debug.apk
-        asset_name: search.apk
+        asset_name: ${{ env.ANDROID_VERSION_CODE }} + ".apk"
         asset_content_type: application/zip
     
 
