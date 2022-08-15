@@ -30,8 +30,4 @@ jobs:
       
     - name: Release APK Publisher
       uses: nightcrawler-/action-release-apk@1.0.2
-      env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       APP_FOLDER: app
-       RELEASE_TITLE: New Build
 
