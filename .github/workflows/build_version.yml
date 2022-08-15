@@ -35,6 +35,7 @@ jobs:
       with:
         expose-version-name: 'true'
         expose-version-code: 'true'
+        path: app/build.gradle
       
     - name: Create release and upload apk
       uses: underwindfall/create-release-with-debugapk@v2.0.0
