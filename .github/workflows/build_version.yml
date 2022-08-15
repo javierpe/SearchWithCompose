@@ -28,11 +28,11 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug --stacktrace
     
-    - name: GitHub Releases
-      uses: fnkr/github-action-ghr@v1.3
+    - name: Build Android release APK when create new tag
+      uses: kyze8439690/action-release-releaseapk@1.0.0
       env:
-          GHR_COMPRESS: xz
-          GHR_PATH: app/build/outputs/apk/debug/app-debug.apk
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       APP_FOLDER: app
+
 
 
