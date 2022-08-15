@@ -35,7 +35,7 @@ jobs:
       with:
         tag_name: "${GITHUB_REF##*/}"
         asset_path: app/build/outputs/apk/debug/app-debug.apk
-        asset_name: search_app.apk
+        asset_name: search.apk
         asset_content_type: application/zip
 
 
