@@ -1,0 +1,44 @@
+name: Build & Publish Debug APK
+
+on:
+ push:
+  branches:
+   - main
+  tags:
+   - '*'
+   
+jobs:
+  build:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: gradle
+    
+    - name: Make Gradle executable
+      run: chmod +x ./gradlew
+    
+    - name: Build with Gradle
+      run: ./gradlew build
+    
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug --stacktrace
+      
+    - name: Create release and upload apk
+      uses: underwindfall/create-release-with-debugapk@v2.0.0
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: "${GITHUB_REF##*/}"
+        asset_path: app/build/outputs/apk/debug/app-debug.apk
+        asset_name: search.apk
+        asset_content_type: application/zip
+    
+
+
