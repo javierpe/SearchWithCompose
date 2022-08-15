@@ -33,9 +33,10 @@ jobs:
     - name: Bump version
       uses: Devofure/advance-android-version-actions@v1.4
       with:
-        gradlePath: app/build.gradle # or app/build.gradle.kts 
+        gradlePath: app/build.gradle
         versionName: ${{ github.event.inputs.versionName }}
-        versionCode: ${{github.run_number}}
+        versionCodeLimiter: 3
+        versionStage: ' '
         run: echo "${{ github.event.inputs.versionName }}"
       
     - name: Create release and upload apk
