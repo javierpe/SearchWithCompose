@@ -28,11 +28,13 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug --stacktrace
     
-    - name: Build Android release APK when create new tag
-      uses: kyze8439690/action-release-releaseapk@1.0.0
+    - name: Build & Publish Release APK
+      uses: evonicgu/action-release-releaseapk@0.0.8
       env:
        GITHUB_TOKEN: ${{ secrets.TOKEN }}
        APP_FOLDER: app
+       RELEASE_TITLE: New Build
+
 
 
 
