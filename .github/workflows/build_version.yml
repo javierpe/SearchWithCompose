@@ -27,9 +27,12 @@ jobs:
     
     - name: Build Debug APK
       run: ./gradlew assembleDebug --stacktrace
-      
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v3.1.0
-      with:
-       path: app/build/outputs/apk/debug/app-debug.apk
+    
+    - name: GitHub Releases
+      uses: fnkr/github-action-ghr@v1.3
+      env:
+          GHR_COMPRESS: xz
+          GHR_PATH: app/build/outputs/apk/debug/app-debug.apk
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
