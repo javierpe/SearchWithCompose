@@ -27,3 +27,11 @@ jobs:
     
     - name: Build Debug APK
       run: ./gradlew assembleDebug
+      
+    - name: Release APK Publisher
+      uses: nightcrawler-/action-release-apk@1.0.2
+      env:
+       GITHUB_TOKEN: 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
+       APP_FOLDER: app
+       RELEASE_TITLE: New Build
+
