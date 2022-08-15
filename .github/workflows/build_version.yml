@@ -31,7 +31,7 @@ jobs:
       run: ./gradlew assembleDebug --stacktrace
       
     - name: Bump version
-      uses: Devofure/advance-android-version-actions@v1.4
+      uses: Devofure/advance-android-version-actions@v1.5.1
       with:
         gradlePath: app/build.gradle
         versionName: ${{ github.event.inputs.versionName }}
