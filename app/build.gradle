@@ -6,9 +6,6 @@ plugins {
     id 'jacoco'
 }
 
-def versionNameValue = "1.0"
-def versionCodeValue = 1
-
 android {
     compileSdk 33
 
@@ -16,8 +13,8 @@ android {
         applicationId "com.app.ml"
         minSdk 26
         targetSdk 33
-        versionCode versionCodeValue
-        versionName versionNameValue
+        versionCode 1
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
