@@ -1,7 +1,7 @@
 package com.app.ml.di
 
-import com.app.ml.api.controllers.NavigationController
-import com.app.ml.impl.NavigationControllerImpl
+import com.app.ml.navigation.data.api.NavigationController
+import com.app.ml.navigation.domain.NavigationControllerImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

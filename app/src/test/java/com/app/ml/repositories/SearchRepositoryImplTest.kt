@@ -1,14 +1,13 @@
 package com.app.ml.repositories
 
-import com.app.ml.api.network.SearchService
+import com.app.ml.searchProduct.data.api.network.SearchService
 import com.app.ml.data.models.ActionScreen
-import com.app.ml.data.models.search.ProductSearchResponseModel
-import com.app.ml.impl.SearchRepositoryImpl
+import com.app.ml.searchProduct.data.models.ProductSearchResponseModel
+import com.app.ml.searchProduct.domain.impl.SearchRepositoryImpl
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import okhttp3.ResponseBody.Companion.toResponseBody
-import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

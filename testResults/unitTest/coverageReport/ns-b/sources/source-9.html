@@ -17,10 +17,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.app.ml.viewModels</a>
+    <a href="../index.html">com.app.ml.presentation.viewModels</a>
 </div>
 
-<h1>Coverage Summary for Class: SearchViewModel (com.app.ml.viewModels)</h1>
+<h1>Coverage Summary for Class: SearchViewModel (com.app.ml.presentation.viewModels)</h1>
 
 <table class="coverageStats">
 
@@ -137,14 +137,14 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.app.ml.viewModels
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.app.ml.presentation.viewModels
 <i class="no-highlight">2</i>&nbsp;
 <i class="no-highlight">3</i>&nbsp;import androidx.lifecycle.ViewModel
 <i class="no-highlight">4</i>&nbsp;import androidx.lifecycle.viewModelScope
-<i class="no-highlight">5</i>&nbsp;import com.app.ml.api.useCases.SearchUseCase
+<i class="no-highlight">5</i>&nbsp;import com.app.ml.searchProduct.data.api.useCases.SearchUseCase
 <i class="no-highlight">6</i>&nbsp;import com.app.ml.data.models.ActionScreen
-<i class="no-highlight">7</i>&nbsp;import com.app.ml.data.models.search.ProductSearchResponseModel
-<i class="no-highlight">8</i>&nbsp;import com.app.ml.db.entities.RecentSearchEntity
+<i class="no-highlight">7</i>&nbsp;import com.app.ml.searchProduct.data.models.ProductSearchResponseModel
+<i class="no-highlight">8</i>&nbsp;import com.app.ml.data.db.entities.RecentSearchEntity
 <i class="no-highlight">9</i>&nbsp;import dagger.hilt.android.lifecycle.HiltViewModel
 <i class="no-highlight">10</i>&nbsp;import kotlinx.coroutines.flow.MutableStateFlow
 <i class="no-highlight">11</i>&nbsp;import kotlinx.coroutines.flow.StateFlow

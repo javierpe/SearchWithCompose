@@ -1,15 +1,15 @@
 package com.app.ml.useCases
 
 import app.cash.turbine.test
-import com.app.ml.api.repositories.ProductDetailRepository
+import com.app.ml.productDetail.data.repositories.ProductDetailRepository
 import com.app.ml.data.models.ActionScreen
-import com.app.ml.data.models.ShippingModel
-import com.app.ml.data.models.productDetail.ProductDetailModel
-import com.app.ml.db.AppDatabase
-import com.app.ml.db.dao.SkeletonsDao
-import com.app.ml.db.entities.SkeletonsEntity
-import com.app.ml.impl.CONTEXT_PRODUCT_DETAIL
-import com.app.ml.impl.ProductDetailUseCaseImpl
+import com.app.ml.productDetail.data.models.ShippingModel
+import com.app.ml.productDetail.data.models.ProductDetailModel
+import com.app.ml.database.AppDatabase
+import com.app.ml.database.dao.SkeletonsDao
+import com.app.ml.database.entities.SkeletonsEntity
+import com.app.ml.productDetail.domain.useCases.CONTEXT_PRODUCT_DETAIL
+import com.app.ml.productDetail.domain.useCases.ProductDetailUseCaseImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect

@@ -1,16 +1,16 @@
 package com.app.ml.useCases
 
 import app.cash.turbine.test
-import com.app.ml.api.repositories.SearchRepository
+import com.app.ml.searchProduct.data.repositories.SearchRepository
 import com.app.ml.data.models.ActionScreen
-import com.app.ml.data.models.search.ProductSearchResponseModel
-import com.app.ml.db.AppDatabase
-import com.app.ml.db.dao.RecentSearchDao
-import com.app.ml.db.dao.SkeletonsDao
-import com.app.ml.db.entities.RecentSearchEntity
-import com.app.ml.db.entities.SkeletonsEntity
-import com.app.ml.impl.CONTEXT_SEARCH
-import com.app.ml.impl.SearchUseCaseImpl
+import com.app.ml.searchProduct.data.models.ProductSearchResponseModel
+import com.app.ml.database.AppDatabase
+import com.app.ml.database.dao.RecentSearchDao
+import com.app.ml.database.dao.SkeletonsDao
+import com.app.ml.database.entities.RecentSearchEntity
+import com.app.ml.database.entities.SkeletonsEntity
+import com.app.ml.searchProduct.domain.useCases.CONTEXT_SEARCH
+import com.app.ml.searchProduct.domain.useCases.SearchUseCaseImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
