@@ -161,14 +161,14 @@ Current scope:     <a href="../../index.html">all classes</a>
 <pre>
 <div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.app.ml.impl
 <i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;import com.app.ml.api.repositories.SearchRepository
-<i class="no-highlight">4</i>&nbsp;import com.app.ml.api.useCases.SearchUseCase
-<i class="no-highlight">5</i>&nbsp;import com.app.ml.db.AppDatabase
-<i class="no-highlight">6</i>&nbsp;import com.app.ml.db.entities.SkeletonsEntity
+<i class="no-highlight">3</i>&nbsp;import com.app.ml.searchProduct.data.repositories.SearchRepository
+<i class="no-highlight">4</i>&nbsp;import com.app.ml.searchProduct.data.api.useCases.SearchUseCase
+<i class="no-highlight">5</i>&nbsp;import com.app.ml.data.db.AppDatabase
+<i class="no-highlight">6</i>&nbsp;import com.app.ml.data.db.entities.SkeletonsEntity
 <i class="no-highlight">7</i>&nbsp;import com.app.ml.di.qualifiers.IODispatcher
 <i class="no-highlight">8</i>&nbsp;import com.app.ml.data.models.ActionScreen
-<i class="no-highlight">9</i>&nbsp;import com.app.ml.data.models.search.ProductSearchResponseModel
-<i class="no-highlight">10</i>&nbsp;import com.app.ml.db.entities.RecentSearchEntity
+<i class="no-highlight">9</i>&nbsp;import com.app.ml.searchProduct.data.models.ProductSearchResponseModel
+<i class="no-highlight">10</i>&nbsp;import com.app.ml.data.db.entities.RecentSearchEntity
 <i class="no-highlight">11</i>&nbsp;import kotlinx.coroutines.CoroutineDispatcher
 <i class="no-highlight">12</i>&nbsp;import kotlinx.coroutines.flow.Flow
 <i class="no-highlight">13</i>&nbsp;import kotlinx.coroutines.flow.catch

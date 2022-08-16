@@ -1,13 +1,13 @@
 package com.app.ml.di
 
-import com.app.ml.api.repositories.ProductDetailRepository
-import com.app.ml.api.repositories.SearchRepository
-import com.app.ml.api.useCases.ProductDetailUseCase
-import com.app.ml.api.useCases.SearchUseCase
-import com.app.ml.impl.ProductDetailRepositoryImpl
-import com.app.ml.impl.ProductDetailUseCaseImpl
-import com.app.ml.impl.SearchRepositoryImpl
-import com.app.ml.impl.SearchUseCaseImpl
+import com.app.ml.productDetail.data.repositories.ProductDetailRepository
+import com.app.ml.searchProduct.data.repositories.SearchRepository
+import com.app.ml.productDetail.data.api.useCases.ProductDetailUseCase
+import com.app.ml.searchProduct.data.api.useCases.SearchUseCase
+import com.app.ml.productDetail.domain.impl.ProductDetailRepositoryImpl
+import com.app.ml.productDetail.domain.useCases.ProductDetailUseCaseImpl
+import com.app.ml.searchProduct.domain.impl.SearchRepositoryImpl
+import com.app.ml.searchProduct.domain.useCases.SearchUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -1,10 +1,10 @@
 package com.app.ml.repositories
 
-import com.app.ml.api.network.ProductService
+import com.app.ml.productDetail.data.api.network.ProductService
 import com.app.ml.data.models.ActionScreen
-import com.app.ml.data.models.ShippingModel
-import com.app.ml.data.models.productDetail.ProductDetailModel
-import com.app.ml.impl.ProductDetailRepositoryImpl
+import com.app.ml.productDetail.data.models.ShippingModel
+import com.app.ml.productDetail.data.models.ProductDetailModel
+import com.app.ml.productDetail.domain.impl.ProductDetailRepositoryImpl
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest

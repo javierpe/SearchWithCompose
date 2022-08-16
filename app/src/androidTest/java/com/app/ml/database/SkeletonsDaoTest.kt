@@ -4,9 +4,8 @@ import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.app.ml.db.AppDatabase
-import com.app.ml.db.dao.SkeletonsDao
-import com.app.ml.db.entities.SkeletonsEntity
+import com.app.ml.database.dao.SkeletonsDao
+import com.app.ml.database.entities.SkeletonsEntity
 import org.junit.After
 import org.junit.Before
 import org.junit.Test

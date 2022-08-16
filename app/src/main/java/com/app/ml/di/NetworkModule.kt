@@ -1,7 +1,7 @@
 package com.app.ml.di
 
-import com.app.ml.api.network.ProductService
-import com.app.ml.api.network.SearchService
+import com.app.ml.productDetail.data.api.network.ProductService
+import com.app.ml.searchProduct.data.api.network.SearchService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
