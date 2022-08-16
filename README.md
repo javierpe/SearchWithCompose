@@ -2,4 +2,5 @@
 App to search data in ML with Jetpack Compose
 
 # Demo
-<img src="https://user-images.githubusercontent.com/7097754/184759108-90aa3ce2-b53f-4f14-9d4e-5795fcd11ac3.gif" width="310" height="640"/>
+<img src="https://user-images.githubusercontent.com/7097754/184786644-77c9cb45-286f-4e13-9fb8-0e2860c28805.gif" width="310" height="640"/>
+
