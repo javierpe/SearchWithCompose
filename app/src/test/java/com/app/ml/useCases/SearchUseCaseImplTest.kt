@@ -9,6 +9,7 @@ import com.app.ml.database.dao.RecentSearchDao
 import com.app.ml.database.dao.SkeletonsDao
 import com.app.ml.database.entities.RecentSearchEntity
 import com.app.ml.database.entities.SkeletonsEntity
+import com.app.ml.logger.Logger
 import com.app.ml.searchProduct.domain.useCases.CONTEXT_SEARCH
 import com.app.ml.searchProduct.domain.useCases.SearchUseCaseImpl
 import kotlinx.coroutines.Dispatchers
@@ -33,6 +34,9 @@ import java.lang.RuntimeException
 @OptIn(ExperimentalCoroutinesApi::class)
 @RunWith(MockitoJUnitRunner::class)
 class SearchUseCaseImplTest {
+
+    @Mock
+    lateinit var logger: Logger
 
     @Mock
     lateinit var searchRepository: SearchRepository
@@ -63,7 +67,8 @@ class SearchUseCaseImplTest {
         searchUseCaseImpl = SearchUseCaseImpl(
             StandardTestDispatcher(),
             searchRepository,
-            database
+            database,
+            logger
         )
 
         whenever(database.skeletonsDao()).thenReturn(skeletonsDao)

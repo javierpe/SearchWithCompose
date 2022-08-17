@@ -2,6 +2,7 @@ package com.app.ml.repositories
 
 import com.app.ml.productDetail.data.api.network.ProductService
 import com.app.ml.data.models.ActionScreen
+import com.app.ml.logger.Logger
 import com.app.ml.productDetail.data.models.ShippingModel
 import com.app.ml.productDetail.data.models.ProductDetailModel
 import com.app.ml.productDetail.domain.impl.ProductDetailRepositoryImpl
@@ -20,6 +21,9 @@ import retrofit2.Response
 @OptIn(ExperimentalCoroutinesApi::class)
 @RunWith(MockitoJUnitRunner::class)
 class ProductDetailRepositoryImplTest {
+
+    @Mock
+    lateinit var logger: Logger
 
     @Mock
     lateinit var productService: ProductService
@@ -51,7 +55,8 @@ class ProductDetailRepositoryImplTest {
     @Before
     fun setUp() {
         productDetailRepositoryImpl = ProductDetailRepositoryImpl(
-            productService
+            productService,
+            logger
         )
     }
 
