@@ -2,6 +2,7 @@ package com.app.ml.repositories
 
 import com.app.ml.searchProduct.data.api.network.SearchService
 import com.app.ml.data.models.ActionScreen
+import com.app.ml.logger.Logger
 import com.app.ml.searchProduct.data.models.ProductSearchResponseModel
 import com.app.ml.searchProduct.domain.impl.SearchRepositoryImpl
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -21,6 +22,9 @@ import retrofit2.Response
 class SearchRepositoryImplTest {
 
     @Mock
+    lateinit var logger: Logger
+
+    @Mock
     lateinit var searchService: SearchService
 
     private lateinit var searchRepositoryImpl: SearchRepositoryImpl
@@ -28,7 +32,8 @@ class SearchRepositoryImplTest {
     @Before
     fun setUp() {
         searchRepositoryImpl = SearchRepositoryImpl(
-            searchService
+            searchService,
+            logger
         )
     }
 

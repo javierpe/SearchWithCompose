@@ -8,6 +8,7 @@ import com.app.ml.di.qualifiers.IODispatcher
 import com.app.ml.data.models.ActionScreen
 import com.app.ml.searchProduct.data.models.ProductSearchResponseModel
 import com.app.ml.database.entities.RecentSearchEntity
+import com.app.ml.logger.Logger
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -23,7 +24,8 @@ const val MAX_QUANTITY_SKELETONS = 10
 class SearchUseCaseImpl @Inject constructor(
     @IODispatcher private val coroutineDispatcher: CoroutineDispatcher,
     private val searchRepository: SearchRepository,
-    private val database: AppDatabase
+    private val database: AppDatabase,
+    private val logger: Logger
 ) : SearchUseCase {
 
     override suspend fun search(value: String): Flow<ActionScreen<ProductSearchResponseModel>> {
@@ -54,6 +56,7 @@ class SearchUseCaseImpl @Inject constructor(
                 emit(ActionScreen.LoadingAction())
             }
         }.catch {
+            logger.e(it.message.orEmpty())
             emit(ActionScreen.ErrorAction(it))
         }.flowOn(coroutineDispatcher)
     }

@@ -7,6 +7,7 @@ import com.app.ml.productDetail.data.models.ProductDetailModel
 import com.app.ml.database.AppDatabase
 import com.app.ml.database.entities.SkeletonsEntity
 import com.app.ml.di.qualifiers.IODispatcher
+import com.app.ml.logger.Logger
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -20,7 +21,8 @@ const val CONTEXT_PRODUCT_DETAIL = "PRODUCT_DETAIL"
 class ProductDetailUseCaseImpl @Inject constructor(
     @IODispatcher private val coroutineDispatcher: CoroutineDispatcher,
     private val productDetailRepository: ProductDetailRepository,
-    private val database: AppDatabase
+    private val database: AppDatabase,
+    private val logger: Logger
 ): ProductDetailUseCase {
 
     override suspend fun loadProductDetail(value: String): Flow<ActionScreen<ProductDetailModel>> {
@@ -42,6 +44,7 @@ class ProductDetailUseCaseImpl @Inject constructor(
                 emit(ActionScreen.LoadingAction())
             }
         }.catch {
+            logger.e(it.message.orEmpty())
             emit(ActionScreen.ErrorAction(it))
         }.flowOn(coroutineDispatcher)
     }

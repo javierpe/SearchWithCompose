@@ -8,6 +8,7 @@ import com.app.ml.productDetail.data.models.ProductDetailModel
 import com.app.ml.database.AppDatabase
 import com.app.ml.database.dao.SkeletonsDao
 import com.app.ml.database.entities.SkeletonsEntity
+import com.app.ml.logger.Logger
 import com.app.ml.productDetail.domain.useCases.CONTEXT_PRODUCT_DETAIL
 import com.app.ml.productDetail.domain.useCases.ProductDetailUseCaseImpl
 import kotlinx.coroutines.Dispatchers
@@ -32,6 +33,9 @@ import java.lang.RuntimeException
 @OptIn(ExperimentalCoroutinesApi::class)
 @RunWith(MockitoJUnitRunner::class)
 class ProductDetailUseCaseImplTest {
+
+    @Mock
+    lateinit var logger: Logger
 
     @Mock
     lateinit var database: AppDatabase
@@ -77,7 +81,8 @@ class ProductDetailUseCaseImplTest {
         productDetailUseCaseImpl = ProductDetailUseCaseImpl(
             StandardTestDispatcher(),
             productDetailRepository,
-            database
+            database,
+            logger
         )
 
         whenever(database.skeletonsDao()).thenReturn(skeletonsDao)
