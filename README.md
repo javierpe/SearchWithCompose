@@ -27,4 +27,5 @@ App to search data in MercadoLibre with Jetpack Compose
 
 # Demo
 <img src="https://user-images.githubusercontent.com/7097754/184786644-77c9cb45-286f-4e13-9fb8-0e2860c28805.gif" width="310" height="640"/>
+<img src="https://user-images.githubusercontent.com/7097754/185008342-64b97e74-51d2-4d51-b5a8-5411d590df24.gif" width="640" height="640"/>
 
